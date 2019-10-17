@@ -70,7 +70,7 @@ class Content extends Component {
         </View>
         <View style={{
           flexDirection: 'row',
-          marginTop: 10,
+          marginTop: 5,
           margin: 5,
           backgroundColor: '#f5f5f5',
           borderWidth: 0.5,
@@ -94,7 +94,7 @@ class Content extends Component {
           full
           onPress={() => this.saveProfileHelper(saveBirthdayProfile, checkBirthProfile)}
           disabled={!registerForm.userProfile.internetStatus}
-          style={{ margin: 5, backgroundColor: APP_TITLE_TEXT_COLOR }}
+          style={{ margin: 5, marginTop: -12, backgroundColor: APP_TITLE_TEXT_COLOR }}
         >
           <Text style={{ color: 'white' }}>Save</Text>
         </Button>

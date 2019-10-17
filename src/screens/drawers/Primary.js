@@ -1,24 +1,27 @@
 import React, { Component } from 'react';
-import { SafeAreaView } from 'react-native';
 import {
-  Container, Content,
+  View, Header, Body, Text,
 } from 'native-base';
-import { DrawerHeader, DrawerContent } from '../../components/drawer_menu';
-import { header, contents } from './PrimaryStructure';
+import { DrawerContent } from '../../components/drawer_menu';
+import { contents } from './PrimaryStructure';
+import { APP_COLOR, APP_TITLE_TEXT_COLOR } from '../../config';
 
 class MenuContent extends Component {
   state ={};
 
   render() {
     return (
-      <SafeAreaView style={{ flex: 1 }}>
-        <Container>
-          <DrawerHeader header={header} {...this.props} />
-          <Content>
-            <DrawerContent contents={contents(this.props)} {...this.props} />
-          </Content>
-        </Container>
-      </SafeAreaView>
+      <View>
+        {/* <DrawerHeader header={header} {...this.props} /> */}
+        <Header style={{ backgroundColor: APP_COLOR }}>
+          <Body>
+            <Text style={{ color: APP_TITLE_TEXT_COLOR }}>Settings</Text>
+          </Body>
+        </Header>
+        <View>
+          <DrawerContent contents={contents(this.props)} {...this.props} />
+        </View>
+      </View>
     );
   }
 }

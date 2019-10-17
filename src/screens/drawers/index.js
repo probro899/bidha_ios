@@ -14,12 +14,9 @@ class index extends Component {
   }
 
   render() {
+    console.log('settings props', this.props);
     const { renderMenu } = this.state;
     const { drawer, main } = this.props;
-
-    if (renderMenu) {
-      return <View><Spinner size="large" /></View>;
-    }
 
     if (drawer.title === 'Menu') {
       return (

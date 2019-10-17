@@ -5,14 +5,6 @@ import { APP_TITLE_TEXT_COLOR } from '../../../../config';
 
 const drawerClickHelper = (lable, toggleMenu, updateModalValue, navigation, updateMainValue, main) => {
   const tempLabel = lable.replace(/\s/g, '');
-  if ((tempLabel === 'Astrologers') || (tempLabel === 'Ideawhattoask')) {
-    return toggleMenu(tempLabel);
-  }
-  if (tempLabel === 'Notifications') {
-    updateMainValue('notification', { ...main.notification, status: false });
-  }
-  navigation.closeDrawer();
-  // setTimeout(() => updateMadalValue(tempLabel, true), 600);
   return updateModalValue(tempLabel, true);
 };
 

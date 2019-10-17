@@ -1,18 +1,43 @@
-import { Dimensions } from 'react-native';
-import { createDrawerNavigator } from 'react-navigation-drawer';
+import { Icon } from 'native-base';
+import React from 'react';
 import { createAppContainer } from 'react-navigation';
-import MainMenu from '../screens/drawers';
-import Main from '../screens/index';
+import { createBottomTabNavigator } from 'react-navigation-tabs';
+import Main from './tab-screens/home';
+import Profile from './tab-screens/profile';
+import Pricing from './tab-screens/pricing';
+import Settings from './tab-screens/settings';
+import { APP_COLOR, APP_TITLE_TEXT_COLOR } from '../config';
 
-const SCREEN_WIDTH = Dimensions.get('window').width;
-const MainNavigator = createDrawerNavigator({
-  Home: {
-    screen: Main,
+const MainNavigator = createBottomTabNavigator(
+  {
+    Home: Main,
+    Profile,
+    Settings,
   },
-}, {
-  drawerWidth: SCREEN_WIDTH * 0.8,
-  contentComponent: MainMenu,
-  drawerBackgroundColor: 'rgba(255,255,255,0.9)',
-});
+  {
+    defaultNavigationOptions: ({ navigation }) => ({
+      tabBarIcon: ({ focused, horizontal, tintColor }) => {
+        const { routeName } = navigation.state;
+        let iconName;
+        if (routeName === 'Home') {
+          iconName = 'home';
+        } else if (routeName === 'Profile') {
+          iconName = 'person';
+        } else if (routeName === 'Settings') {
+          iconName = 'settings';
+        }
+        // You can return any component that you like here!
+        return <Icon name={iconName} size={25} style={{ color: tintColor }} />;
+      },
+    }),
+    tabBarOptions: {
+      activeTintColor: APP_TITLE_TEXT_COLOR,
+      inactiveTintColor: 'black',
+      activeBackgroundColor: APP_COLOR,
+      inactiveBackgroundColor: APP_COLOR,
+      showLabel: false,
+    },
+  },
+);
 
 export default createAppContainer(MainNavigator);
