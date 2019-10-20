@@ -1,10 +1,26 @@
 import React from 'react';
 import { TouchableOpacity, View, Text } from 'react-native';
 import { Icon, Badge } from 'native-base';
+import Share from 'react-native-share';
 import { APP_TITLE_TEXT_COLOR } from '../../../../config';
+
+const shareThisApp = () => {
+  const shareOptions = {
+    title: 'Bidha Live Prediction',
+    message: 'Please download and share this app',
+    url: 'https://play.google.com/store/apps/details?id=com.bidha',
+    // social: [FACEBOOK, WHATSAPP, INSTAGRAM],
+  };
+  Share.open(shareOptions)
+    .then((res) => console.log('Share success respose', res))
+    .catch((err) => console.log('Share error response', err));
+};
 
 const drawerClickHelper = (lable, toggleMenu, updateModalValue, navigation, updateMainValue, main) => {
   const tempLabel = lable.replace(/\s/g, '');
+  if (tempLabel === 'ShareThisApp') {
+    return shareThisApp();
+  }
   return updateModalValue(tempLabel, true);
 };
 

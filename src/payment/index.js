@@ -29,13 +29,13 @@ export default async (props) => {
     // console.log('props in payment stripe', props);
     // console.log(props.navigation);
     const isSupportAndroidPay = await Stripe.deviceSupportsNativePay();
-    console.log(' deviceSupportsNativePay payment method is called', isSupportAndroidPay);
+    // console.log(' deviceSupportsNativePay payment method is called', isSupportAndroidPay);
     const canImakeAndroidpayment = await Stripe.canMakeNativePayPayments();
-    console.log('canMakeNativePayPayments method is called', canImakeAndroidpayment);
+    // console.log('canMakeNativePayPayments method is called', canImakeAndroidpayment);
     // console.log('is device support android pay', isSupportAndroidPay, canImakeAndroidpayment);
     props.navigation.closeDrawer();
     const resToken = await Stripe.paymentRequestWithAndroidPay(options(props.main.configuration.questionRate));
-    console.log('resToken', resToken);
+    // console.log('resToken', resToken);
     props.navigation.closeDrawer();
     if (resToken.tokenId) {
       // console.log('token resposne from stripe', resToken.tokenId);

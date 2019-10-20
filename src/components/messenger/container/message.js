@@ -6,8 +6,8 @@ import UserMessage from './userMessage';
 import SystemMessage from './systemMessage';
 
 const messageSelectorHelper = (msg, props) => {
-  console.log('message in messageSelector', msg);
-  switch(msg.type) {
+  // console.log('message in messageSelector', msg);
+  switch (msg.type) {
     case 'question':
       return  <UserMessage message={msg} props={props} /> ;
     case 'answer':

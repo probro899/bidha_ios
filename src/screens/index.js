@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import NetInfo from '@react-native-community/netinfo';
 // import firebase from 'react-native-firebase';
 // import PushNotification from 'react-native-push-notification';
 import { Alert } from 'react-native';
-import NetInfo from '@react-native-community/netinfo';
+import * as actions from '../actions';
 import Home from './home';
 import WelcomeScreen from './welcome-screen';
-import * as actions from '../actions';
 import { multiGetAsync, getAsyncData, setAsyncData } from '../common/AsycstrorageHandler';
 
 class index extends React.Component {
@@ -152,6 +152,7 @@ class index extends React.Component {
     if (renderMain) {
       return <WelcomeScreen {...this.props} />;
     }
+    this.props.navigation.navigate('Home');
     return <Home {...this.props} />;
   }
 }
@@ -164,6 +165,6 @@ index.propTypes = {
   updateMainValue: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => state;
+const mapStateToProps = (state) => state;
 
-export default connect(mapStateToProps, { ...actions })(index);
+export default connect(mapStateToProps, {...actions})(index);

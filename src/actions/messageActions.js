@@ -47,7 +47,7 @@ export const sendMessageHandler = ({ paymentStatus, type, questionType, freeQues
         dispatch(updateModalValue('showMessageMenuError', 'Faild to resend'));
       }
     } else {
-      console.log('message send handler called', paymentStatus, type, questionType);
+      // console.log('message send handler called', paymentStatus, type, questionType);
       dispatch(updateModalValue('showMessageMenuLoading', true));
       dispatch(updateMessage('messageStatus', 'loading'));
       const addQsnRes = await axios.post(`${BASE_URL}/app/addQuestion`,
@@ -63,7 +63,7 @@ export const sendMessageHandler = ({ paymentStatus, type, questionType, freeQues
           firstName,
           freeQuestionId,
         });
-        console.log('addQsnRes', addQsnRes.data);
+        // console.log('addQsnRes', addQsnRes.data);
       if (addQsnRes.status === 200) {
         if (questionType === 'free') {
           // console.log('inside free question type', getState().main.freeQuestion);

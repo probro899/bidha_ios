@@ -15,12 +15,15 @@ import WhyVedicAstrology from '../modals/why-vedic-astrology';
 import IdeatToAsk from '../modals/ideato-ask';
 import AppIcon from '../../../assets/app_logo1.png';
 import Astrologers from '../modals/astrologer';
+import TodayPrediction from '../modals/today-prediction';
+import PrivacyPolicy from '../modals/privacy-policies';
 
 class Index extends Component {
   state={};
 
   render() {
-    const { navigation, updateModalValue, registerForm } = this.props;
+    const { updateModalValue, registerForm } = this.props;
+    // console.log('props in home', this.props);
     return (
       <View style={{ flexGrow: 1 }}>
         <Header style={{ backgroundColor: APP_COLOR, width: '100%' }}>
@@ -60,6 +63,8 @@ class Index extends Component {
         <WhyVedicAstrology {...this.props} />
         <IdeatToAsk {...this.props} />
         <Astrologers {...this.props} />
+        <TodayPrediction {...this.props} />
+        <PrivacyPolicy {...this.props} />
       </View>
     );
   }

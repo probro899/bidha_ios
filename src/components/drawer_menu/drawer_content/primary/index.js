@@ -19,7 +19,7 @@ const contentElement = (content, idx, props) => {
       return null;
   }
 };
-
+ 
 const DrawerContent = (props) =>  {
   // console.log('state in Drawercontent', props.toggleMenu);
   const { contents } = props;

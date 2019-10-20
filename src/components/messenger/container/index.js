@@ -59,21 +59,21 @@ class MessageContainer extends Component {
   render() {
     const { messageList, main } = this.props;
     const { keyboardSpace } = this.state;
-    console.log('props in main container', this.props)
-   console.log('all Cotainer messsages', this.containerFormater());
+    // console.log('props in main container', this.props)
+    // console.log('all Cotainer messsages', this.containerFormater());
     return (
       <ImageBackground source={backGround} style={{ flex: 1 }}>
-      <ScrollView
-        nestedScrollEnabled
-        ref={ref => this.scrollView = ref}
-        contentContainerStyle={{ backgroundColor: '#ffffff55', flexGrow: 1 }}
-        onContentSizeChange={() => this.scrollView.scrollToEnd({ animated: true })}
-      >
-        {(main.configuration && main.configuration.initialMessage) ? <SystemMessage message={main.configuration.initialMessage} /> : null }
-        {this.containerFormater().map((msg, idx) => messageListHandler(msg, idx, this.props))}
-        <View style={{ height: keyboardSpace }} />
-      </ScrollView>
-    </ImageBackground>
+        <ScrollView
+          nestedScrollEnabled
+          ref={ref => this.scrollView = ref}
+          contentContainerStyle={{ backgroundColor: '#ffffff55', flexGrow: 1 }}
+          onContentSizeChange={() => this.scrollView.scrollToEnd({ animated: true })}
+        >
+          {(main.configuration && main.configuration.initialMessage) ? <SystemMessage message={main.configuration.initialMessage} /> : null }
+          {this.containerFormater().map((msg, idx) => messageListHandler(msg, idx, this.props))}
+          <View style={{ height: keyboardSpace }} />
+        </ScrollView>
+      </ImageBackground>
     );
   }
 }

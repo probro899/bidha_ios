@@ -1,3 +1,7 @@
-import Main from '../../../screens';
+import { connect } from 'react-redux';
+import Main from '../../../screens/home';
+import * as actions from '../../../actions';
 
-export default Main;
+const mapstateToProps = state => state;
+
+export default connect(mapstateToProps, {...actions})(Main);

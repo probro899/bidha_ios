@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Modal from 'react-native-modal';
 import ModalContent from './Content';
 
-class TermsAndPrivacy extends Component {
+class WhyVedicAstrology extends Component {
   state = {};
 
   render() {
@@ -12,9 +12,9 @@ class TermsAndPrivacy extends Component {
       <Modal
         backdropColor="null"
         animationInTiming={500}
-        onBackButtonPress={() => updateModalValue('Terms&Conditions', false)}
+        onBackButtonPress={() => updateModalValue('TodayPrediction', false)}
         animationOutTiming={500}
-        isVisible={modal['Terms&Conditions']}
+        isVisible={modal['TodayPrediction']}
         style={{ flex: 1, backgroundColor: '#fff', margin: 0 }}
       >
         <ModalContent {...this.props} />
@@ -23,8 +23,8 @@ class TermsAndPrivacy extends Component {
   }
 }
 
-TermsAndPrivacy.propTypes = {
+WhyVedicAstrology.propTypes = {
   modal: PropTypes.objectOf(PropTypes.any).isRequired,
   updateModalValue: PropTypes.func.isRequired,
 }
-export default TermsAndPrivacy;
+export default WhyVedicAstrology;

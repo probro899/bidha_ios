@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Modal from 'react-native-modal';
+import { Container, Content } from 'native-base';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
@@ -7,7 +7,8 @@ import * as actions from '../../../actions';
 import ModalHeader from './Header';
 import ModalContent from './Content';
 import ShowInternetConnectionInfo from '../../../common/ShowInternetConnectionInfo';
-import { View } from 'native-base';
+
+import { SCREEN_HEIGHT } from '../../../config';
 
 class BirthProfile extends Component {
   state = {};
@@ -15,13 +16,15 @@ class BirthProfile extends Component {
   render() {
     const { modal, updateModalValue } = this.props;
     return (
-      <View>
+      <Container style={{ height: SCREEN_HEIGHT }}>
         <ModalHeader {...this.props} />
-        <ShowInternetConnectionInfo {...this.props} />
-        <KeyboardAwareScrollView>
-          <ModalContent {...this.props} />
-        </KeyboardAwareScrollView>
-      </View>
+        <Content>
+          <ShowInternetConnectionInfo {...this.props} />
+          <KeyboardAwareScrollView>
+            <ModalContent {...this.props} />
+          </KeyboardAwareScrollView>
+        </Content>
+      </Container>
     );
   }
 }

@@ -14,7 +14,7 @@ class index extends Component {
   }
 
   render() {
-    console.log('settings props', this.props);
+    // console.log('settings props', this.props);
     const { renderMenu } = this.state;
     const { drawer, main } = this.props;
 

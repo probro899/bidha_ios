@@ -7,9 +7,7 @@ class Settings extends React.Component {
 
   render() {
     return (
-      <View>
-        <OldDrawer />
-      </View>
+      <OldDrawer />
     );
   }
 }

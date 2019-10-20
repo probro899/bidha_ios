@@ -7,10 +7,10 @@ import { APP_COLOR, APP_TITLE_TEXT_COLOR } from '../../../config';
 const CustomHeader = ({ updateModalValue }) => (
   <Header style={{ backgroundColor: APP_COLOR }}>
     <Body>
-      <Text style={{ color: APP_TITLE_TEXT_COLOR }}>Terms & Conditions</Text>
+      <Text style={{ color: APP_TITLE_TEXT_COLOR }}>Today Prediction</Text>
     </Body>
     <Right>
-      <TouchableOpacity onPress={() => updateModalValue('Terms&Conditions', false)}>
+      <TouchableOpacity onPress={() => updateModalValue('TodayPrediction', false)}>
         <Icon name="close" style={{ color: APP_TITLE_TEXT_COLOR }} />
       </TouchableOpacity>
     </Right>
