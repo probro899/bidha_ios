@@ -10,7 +10,6 @@ import payment from '../../../payment';
 import AppIcon from '../../../../assets/app_logo1.png';
 
 class MessageSender extends Component {
-
   state = { showIdeaToask: true, showTotalAmount: false };
 
   componentDidMount() {
@@ -22,15 +21,15 @@ class MessageSender extends Component {
   messageSendHandler = async (sendMessageHandler, updateMessage, updateMainValue, main) => {
     updateMessage('messageStatus', 'loading');
     updateMainValue('drawer', false);
-    sendMessageHandler({ paymentStatus: false, questionType: 'paid' });
-    // if (main.freeQuestion.filter(obj => obj.status === 1).length > 0) {
-    //   updateMainValue('drawer', true);
-    //   const freeQuestionId = main.freeQuestion.find(obj => obj.status === 1);
-    //   console.log('free Quesiton id', freeQuestionId);
-    //   sendMessageHandler({ paymentStatus: true, questionType: 'free', freeQuestionId: freeQuestionId.id });
-    // } else {
-    //   this.setState({ showTotalAmount: true });
-    // }
+    // sendMessageHandler({ paymentStatus: false, questionType: 'paid' });
+    if (main.freeQuestion.filter(obj => obj.status === 1).length > 0) {
+      updateMainValue('drawer', true);
+      const freeQuestionId = main.freeQuestion.find(obj => obj.status === 1);
+      console.log('free Quesiton id', freeQuestionId);
+      sendMessageHandler({ paymentStatus: true, questionType: 'free', freeQuestionId: freeQuestionId.id });
+    } else {
+      this.setState({ showTotalAmount: true });
+    }
   }
 
   continueWithGpayhandler = async (sendMessageHandler, updateMessage, updateMainValue, main) => {
@@ -52,7 +51,7 @@ class MessageSender extends Component {
 
   render() {
     const { showIdeaToask, showTotalAmount } = this.state;
-    const { message, updateMessage, sendMessageHandler, checkBirthProfile, updateModalValue, messageStatus, registerForm, updateMainValue, main } = this.props;
+    const { navigation, message, updateMessage, sendMessageHandler, checkBirthProfile, updateModalValue, messageStatus, registerForm, updateMainValue, main } = this.props;
     return (
       <View style={{
         flexDirection: 'row',
@@ -91,7 +90,7 @@ class MessageSender extends Component {
             onBlur={this.handleShowIdeaToAsk}
             onFocus={() => {
               this.handleShowIdeaToAsk();
-              checkBirthProfile();
+              // checkBirthProfile();
             }}
           />
         </View>
@@ -103,7 +102,7 @@ class MessageSender extends Component {
                 style={{ margin: 5 }}
                 disabled={!registerForm.userProfile.internetStatus}
                 onPress={() => {
-                  if (checkBirthProfile(updateModalValue) && message.length > 0) {
+                  if (checkBirthProfile(navigation) && message.length > 0) {
                     this.messageSendHandler(sendMessageHandler, updateMessage, updateMainValue, main);
                   }
                 }}

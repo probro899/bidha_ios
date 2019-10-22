@@ -37,14 +37,15 @@ class Content extends Component {
     return renderComponent;
   }
 
-  saveProfileHelper = (saveBirthdayProfile, checkBirthProfile) => {
-    if (checkBirthProfile()) {
+  saveProfileHelper = (saveBirthdayProfile, checkBirthProfile, navigation) => {
+    if (checkBirthProfile(navigation)) {
       saveBirthdayProfile();
     }
   }
 
   render() {
-    const { updateFormValue, registerForm, updateModalValue, saveBirthdayProfile, checkBirthProfile } = this.props;
+    console.log('props in profile', this.props)
+    const {navigation, updateFormValue, registerForm, updateModalValue, saveBirthdayProfile, checkBirthProfile } = this.props;
 
     return (
       <View style={{ flex: 1, marginTop: 10, position: 'relative' }}>
@@ -92,7 +93,7 @@ class Content extends Component {
         </View>
         <Button
           full
-          onPress={() => this.saveProfileHelper(saveBirthdayProfile, checkBirthProfile)}
+          onPress={() => this.saveProfileHelper(saveBirthdayProfile, checkBirthProfile, navigation)}
           disabled={!registerForm.userProfile.internetStatus}
           style={{ margin: 5, marginTop: -12, backgroundColor: APP_TITLE_TEXT_COLOR }}
         >

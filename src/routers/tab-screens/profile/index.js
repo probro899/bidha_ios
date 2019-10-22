@@ -7,7 +7,7 @@ class Profile extends React.Component {
 
   render() {
     return (
-      <OldProfile />
+      <OldProfile {...this.props} />
     );
   }
 }

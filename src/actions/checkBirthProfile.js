@@ -6,7 +6,7 @@ const timeFormatChecker = (time) => {
   return reg.test(`${time}`);
 };
 
-export const checkBirthProfile = () => (dispatch, getState) => {
+export const checkBirthProfile = (navigation) => (dispatch, getState) => {
   const {
     firstName, gender, dob, country, city, state, time,
   } = getState().registerForm.userProfile;
@@ -30,7 +30,7 @@ export const checkBirthProfile = () => (dispatch, getState) => {
     StringToShow(),
     [
       { text: 'Ask me later', onPress: () => {} },
-      { text: 'Add Now', onPress: () => dispatch(updateModalValue('showProfileModal', true)) },
+      { text: 'Add Now', onPress: () => {navigation.navigate('Profile')} },
     ],
     { cancelable: false },
   );

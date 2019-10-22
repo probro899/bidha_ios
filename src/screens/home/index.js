@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Header, Left, Button, Icon, Body, Right, Title, Thumbnail } from 'native-base';
+import { View, Header, Left, Button, Icon, Body, Right, Title, Thumbnail, Text } from 'native-base';
 import PropTypes from 'prop-types';
 import { TouchableOpacity } from 'react-native';
 import Messenger from '../../components/messenger';
@@ -34,8 +34,10 @@ class Index extends Component {
           </Left> */}
           <Body style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
             <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-              <Thumbnail source={AppIcon} small square />
-              <Title style={{ color: APP_TITLE_TEXT_COLOR, marginLeft: 10 }}>Bidha Live Prediction</Title>
+              <Thumbnail source={AppIcon} square style={{ height: 30, width: 30, marginLeft: 20 }} />
+              <Title style={{ color: APP_TITLE_TEXT_COLOR, marginLeft: 10, justifyContent: 'center' }}>
+                <Text style={{ color: APP_TITLE_TEXT_COLOR, textAlign: 'center' }}>Bidha Live Prediction</Text>
+              </Title>
             </View>
           </Body>
           <Right>
