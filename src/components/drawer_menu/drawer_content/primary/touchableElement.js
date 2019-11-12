@@ -9,14 +9,13 @@ const shareThisApp = () => {
     title: 'Bidha Live Prediction',
     message: 'Please download and share this app',
     url: 'https://play.google.com/store/apps/details?id=com.bidha',
-    // social: [FACEBOOK, WHATSAPP, INSTAGRAM],
   };
   Share.open(shareOptions)
     .then((res) => console.log('Share success respose', res))
     .catch((err) => console.log('Share error response', err));
 };
 
-const drawerClickHelper = (lable, toggleMenu, updateModalValue, navigation, updateMainValue, main) => {
+const drawerClickHelper = (lable, updateModalValue) => {
   const tempLabel = lable.replace(/\s/g, '');
   if (tempLabel === 'ShareThisApp') {
     return shareThisApp();
@@ -33,7 +32,6 @@ const touchableElement = (content, id, { toggleMenu, updateModalValue, navigatio
         padding: 15,
         borderBottomWidth: 0.5,
         borderBottomColor: '#f5f5f5',
-        // backgroundColor: 'rgba(255,255,255,0.8)'
       }}
     >
       <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>

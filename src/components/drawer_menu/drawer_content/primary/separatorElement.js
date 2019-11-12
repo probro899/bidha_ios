@@ -1,6 +1,6 @@
 import React from 'react';
 import { Separator, Text } from 'native-base';
-import { APP_OLD_COLOR, APP_TITLE_TEXT_COLOR } from '../../../../config';
+import { APP_TITLE_TEXT_COLOR } from '../../../../config';
 
 export default (content) => {
   return (

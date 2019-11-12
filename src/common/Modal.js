@@ -49,9 +49,7 @@ const CustomModal = ({
 
 const styles = StyleSheet.create({
   centerModal: {
-    // justifyContent: 'center',
-    // margin: 0,
-    // alignItems: 'center',
+   
   },
   contentStyle: {
     maxHeight: SCREEN_HEIGHT * 0.5,

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { View, CheckBox, Text } from 'native-base';
 
 const CustomCheckBox = ({
-  content, navigation, registerForm, updateFormValue, checkBoxPressHandler,
+  content, navigation, registerForm, checkBoxPressHandler,
 }) => (
   <View style={{ flexDirection: 'row', marginTop: 20 }}>
     <CheckBox checked={registerForm[content.value]} style={{ margin: 10 }} onPress={() => checkBoxPressHandler(content, navigation)} />

@@ -3,7 +3,7 @@ import Modal from 'react-native-modal';
 import PropTypes from 'prop-types';
 import { Header, Body, Title, Text, Right, Button, Icon, View, Container, Content } from 'native-base';
 import ModalContent from './Content';
-import { SCREEN_HEIGHT, APP_COLOR, APP_TITLE_TEXT_COLOR } from '../../../config';
+import { APP_COLOR, APP_TITLE_TEXT_COLOR } from '../../../config';
 
 const contentMessage = `Please join hands today with the team of our pro astrologer with the history of years of research who are capable of guiding you towards the right direction, decision and steps in life. They are available for you 24/7.`;
 
@@ -12,10 +12,8 @@ class CustomerSupport extends Component {
 
   render() {
     const { modal, updateModalValue, main } = this.props;
-    // console.log('astrologer list', this.props);
     return (
       <Modal
-        // backdropColor="null"
         onBackButtonPress={() => updateModalValue('Astrologers', false)}
         animationInTiming={300}
         animationOutTiming={300}

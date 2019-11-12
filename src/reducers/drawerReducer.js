@@ -6,7 +6,6 @@ const INITIAL_STATE = {
 };
 
 export default (state = INITIAL_STATE, action) => {
-  // console.log('Reducer called', action.type, action.payload);
   switch (action.type) {
     case TOGGLE_MENU:
       return { ...state, title: action.payload };

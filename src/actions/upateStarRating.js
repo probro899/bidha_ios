@@ -13,11 +13,9 @@ const starRatingHelper = (messageList, star, id) => {
 };
 
 export default (star, ansId, qid) => async (dispatch, getState) => {
-  // console.log('star rating action called', star, qid, getState().message);
   try {
     dispatch(updateMessage('starRatingStatus', ansId));
     const res = await axios.post(`${BASE_URL}/app/update-star-rate`, { qid, star });
-    // console.log('response of star rate', res.data);
     if (res.status === 200) {
       dispatch(updateMessage('starRatingStatus', false));
       dispatch(updateMessage('messageList', starRatingHelper(getState().message.messageList, star, qid)));

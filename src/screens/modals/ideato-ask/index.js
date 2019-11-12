@@ -12,7 +12,6 @@ class CustomerSupport extends Component {
     const { modal, updateModalValue } = this.props;
     return (
       <Modal
-        // backdropColor="null"
         onBackButtonPress={() => updateModalValue('showIdeaToAsk', false)}
         animationInTiming={300}
         animationOutTiming={300}

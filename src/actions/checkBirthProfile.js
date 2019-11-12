@@ -1,5 +1,4 @@
 import { Alert } from 'react-native';
-import { updateModalValue } from './index';
 
 const timeFormatChecker = (time) => {
   const reg = new RegExp(/^(0[0-9]|1[0-9]|2[0-3]|[0-9]):[0-5][0-9]$/);

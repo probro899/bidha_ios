@@ -30,6 +30,5 @@ CustomButtom.propTypes = {
   registerForm: PropTypes.objectOf(PropTypes.any).isRequired,
   contactUsMessageHandler: PropTypes.func.isRequired,
   schema: PropTypes.string.isRequired,
-  // buttonPressHandler: PropTypes.func.isRequired,
 };
 export default CustomButtom;

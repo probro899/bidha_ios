@@ -11,14 +11,12 @@ class index extends Component {
 
   render() {
     const { updateMessage, updateModalValue } = this.props;
-    // console.log('props in Idea what to ask', this.prop);
     return (
       <View>
         <Accordion
           headerStyle={{ backgroundColor: '#fff' }}
           renderHeader={renderHeaderHelper}
           renderContent={content => renderContentHelper(content, updateMessage, updateModalValue)}
-          // contentStyle={{ backgroundColor: '#fff' }}
           dataArray={dataArray}
           expended={0}
         />

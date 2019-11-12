@@ -4,7 +4,7 @@ import { TouchableOpacity } from 'react-native';
 import { View, Text, Thumbnail, Spinner } from 'native-base';
 import { format } from 'date-fns';
 import StarRating from 'react-native-star-rating';
-import { SCREEN_WIDTH, BASE_URL, APP_COLOR,APP_TITLE_TEXT_COLOR } from '../../../config';
+import { SCREEN_WIDTH, BASE_URL, APP_TITLE_TEXT_COLOR } from '../../../config';
 
 const renderStarRating = (message, updateStarRating, starRatingStatus) => {
   return (

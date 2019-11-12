@@ -91,6 +91,5 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginRight: 5,
     justifyContent: 'flex-end',
-    // backgroundColor: 'red',
   },
 });

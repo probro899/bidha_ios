@@ -43,7 +43,6 @@ export const saveBirthdayProfile = () => {
         url: `${BASE_URL}/auth/userRegistration`,
         data: formData,
       });
-      // console.log('udpate profile response', profile.data);
       if (profile.data.uid && profile.data.token && profile.status === 200) {
         dispatch(updateFormValue('userProfile', { uid: profile.data.uid }));
         dispatch(updateFormValue('userProfile', { registrationToken: profile.data.token }));
@@ -76,7 +75,6 @@ export const saveBirthdayProfile = () => {
       }
       dispatch(updateFormValue('userProfile', { loading: false, success: 'Profile Successfully submited' }));
     } catch (e) {
-      // console.log('error in update from value', e);
       dispatch(updateFormValue('userProfile', { loading: false, error: 'Faild to update profile' }));
       throw e;
     }

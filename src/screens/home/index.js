@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { View, Header, Left, Button, Icon, Body, Right, Title, Thumbnail, Text } from 'native-base';
+import { View, Header, Button, Icon, Body, Right, Title, Thumbnail, Text } from 'native-base';
 import PropTypes from 'prop-types';
-import { TouchableOpacity } from 'react-native';
 import Messenger from '../../components/messenger';
-import BirthProfile from '../modals/birth-profile';
 import ShowTermsAndPrivacyModal from '../modals/term-and-privacy';
 import CustomerSupport from '../modals/customer-support';
 import { APP_COLOR, APP_TITLE_TEXT_COLOR } from '../../config';
@@ -23,15 +21,9 @@ class Index extends Component {
 
   render() {
     const { updateModalValue, registerForm } = this.props;
-    // console.log('props in home', this.props);
     return (
       <View style={{ flexGrow: 1 }}>
         <Header style={{ backgroundColor: APP_COLOR, width: '100%' }}>
-          {/* <Left>
-            <TouchableOpacity transparent onPress={() => navigation.openDrawer()}>
-              <Icon style={{ color: APP_TITLE_TEXT_COLOR }} name="menu" />
-            </TouchableOpacity>
-          </Left> */}
           <Body style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
             <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
               <Thumbnail source={AppIcon} square style={{ height: 30, width: 30, marginLeft: 20 }} />
@@ -56,7 +48,6 @@ class Index extends Component {
         </Header>
         <ShowInternetConnection {...this.props} />
         <Messenger {...this.props} />
-        {/* <BirthProfile {...this.props} /> */}
         <ShowTermsAndPrivacyModal {...this.props} />
         <CustomerSupport {...this.props} />
         <MessageMenu {...this.props} />

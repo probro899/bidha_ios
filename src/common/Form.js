@@ -10,9 +10,7 @@ import CheckBox from './CheckBox';
 import TextArea from './TextArea';
 
 class CustomForm extends Component  {
-
-  state = {};
-
+  
   renderFormElementHandler = (content, idx) => {
     switch (content.element) {
       case 'input':

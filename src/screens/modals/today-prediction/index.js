@@ -26,5 +26,5 @@ class WhyVedicAstrology extends Component {
 WhyVedicAstrology.propTypes = {
   modal: PropTypes.objectOf(PropTypes.any).isRequired,
   updateModalValue: PropTypes.func.isRequired,
-}
+};
 export default WhyVedicAstrology;

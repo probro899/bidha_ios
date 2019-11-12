@@ -21,7 +21,6 @@ const contentElement = (content, idx, props) => {
 };
  
 const DrawerContent = (props) =>  {
-  // console.log('state in Drawercontent', props.toggleMenu);
   const { contents } = props;
   return (
     <View>

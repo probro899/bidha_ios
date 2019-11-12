@@ -5,7 +5,6 @@ import {
 import { APP_TITLE_TEXT_COLOR } from '../../../../config';
 
 export default (content, idx) => {
-  // console.log(content.rightElement);
   const color = idx % 2;
   return (
     <View key={content.label}>

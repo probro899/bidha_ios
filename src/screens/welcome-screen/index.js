@@ -22,7 +22,6 @@ class WelcomeScreen extends Component {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: APP_COLOR }}>
         <Animated.View style={{ opacity: fadeAnim }}>
-          {/* <Text style={{ fontSize: 40, fontWeight: 'bold' }}>Welcome to bidha</Text> */}
           <Thumbnail style={{ height: 150, width: 150 }} source={require('../../../assets/app_logo1.png')} />
         </Animated.View>
         <Text style={{ marginTop: 20, color: APP_TITLE_TEXT_COLOR }}>Loading ...</Text>

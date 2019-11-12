@@ -2,11 +2,9 @@ import { Icon } from 'native-base';
 import React from 'react';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
-import { createStackNavigator } from 'react-navigation-stack';
 import Home from './tab-screens/home';
 import WelComeScreen from '../screens';
 import Profile from './tab-screens/profile';
-import Pricing from './tab-screens/pricing';
 import Settings from './tab-screens/settings';
 import { APP_COLOR, APP_TITLE_TEXT_COLOR } from '../config';
 
@@ -28,7 +26,6 @@ const TabNavigator = createBottomTabNavigator(
         } else if (routeName === 'Settings') {
           iconName = 'menu';
         }
-        // You can return any component that you like here!
         return <Icon name={iconName} size={25} style={{ color: tintColor }} />;
       },
     }),

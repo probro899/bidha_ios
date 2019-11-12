@@ -44,7 +44,6 @@ class Content extends Component {
   }
 
   render() {
-    console.log('props in profile', this.props)
     const {navigation, updateFormValue, registerForm, updateModalValue, saveBirthdayProfile, checkBirthProfile } = this.props;
 
     return (

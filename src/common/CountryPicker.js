@@ -5,7 +5,6 @@ import CountryPicker from 'react-native-country-picker-modal';
 
 class CustomCountryPicker extends Component {
   constructor(props) {
-    // StatusBarIOS.setHidden(true);
     super(props);
     this.state = {};
   }
