@@ -19,7 +19,7 @@ const contentElement = (content, idx, props) => {
       return null;
   }
 };
- 
+
 const DrawerContent = (props) =>  {
   const { contents } = props;
   return (

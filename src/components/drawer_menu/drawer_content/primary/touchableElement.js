@@ -16,6 +16,7 @@ const shareThisApp = () => {
 };
 
 const drawerClickHelper = (lable, updateModalValue) => {
+  console.log('drawer clicked', lable, updateModalValue);
   const tempLabel = lable.replace(/\s/g, '');
   if (tempLabel === 'ShareThisApp') {
     return shareThisApp();
@@ -26,7 +27,7 @@ const drawerClickHelper = (lable, updateModalValue) => {
 const touchableElement = (content, id, { toggleMenu, updateModalValue, navigation, main, updateMainValue }) => {
   return (
     <TouchableOpacity
-      onPress={() => drawerClickHelper(content.label, toggleMenu, updateModalValue, navigation, updateMainValue, main)}
+      onPress={() => drawerClickHelper(content.label, updateModalValue, toggleMenu, updateModalValue, navigation, updateMainValue, main)}
       key={content.label}
       style={{
         padding: 15,

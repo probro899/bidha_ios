@@ -7,22 +7,12 @@ import Secondary from './Secondary';
 import * as actions from '../../actions';
 
 class index extends Component {
-  state={ renderMenu: true };
-
-  async componentWillMount() {
-    this.setState({ renderMenu: false });
-  }
+  state={};
 
   render() {
     const { drawer, main } = this.props;
-
-    if (drawer.title === 'Menu') {
-      return (
-        main.drawer ? <Primary headerTitle={drawer.title} {...this.props} /> : null
-      );
-    }
     return (
-      <Secondary headerTitle={drawer.title} {...this.props} />
+      <Primary headerTitle={drawer.title} {...this.props} />
     );
   }
 }
@@ -34,3 +24,4 @@ index.propTypes = {
   drawer: PropTypes.objectOf(PropTypes.any).isRequired,
   main: PropTypes.objectOf(PropTypes.any).isRequired,
 };
+ 
